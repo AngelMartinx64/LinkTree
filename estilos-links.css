@@ -1,0 +1,120 @@
+/* --- CONFIGURACIÓN GLOBAL --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000; /* Fondo negro puro */
+    color: #ffffff;
+    font-family: 'Fira Code', monospace; /* Fuente técnica */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    padding: 20px;
+}
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.container {
+    width: 100%;
+    max-width: 400px; /* Ancho controlado para verse bien en PC y móvil */
+    text-align: center;
+    animation: fadeIn 1s ease-in; /* Pequeña animación de entrada */
+}
+
+/* --- FOTO DE PERFIL --- */
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Círculo perfecto */
+    object-fit: cover;
+    border: 2px solid #333; /* Borde sutil */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+    border-color: #fff;
+    cursor: pointer;
+}
+
+/* --- TEXTOS (Nombre y Título) --- */
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+
+p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* --- LISTA DE BOTONES --- */
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre cada botón */
+}
+
+.btn {
+    background-color: #111; /* Un poco más claro que el fondo */
+    color: white;
+    text-decoration: none; /* Quita el subrayado azul */
+    padding: 15px 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
+    
+    /* Para alinear icono y texto */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; 
+    font-size: 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto Hover (Al pasar el mouse) */
+.btn:hover {
+    background-color: #fff;
+    color: #000;
+    transform: translateY(-3px); /* Se levanta un poco */
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+    border-color: #fff;
+}
+
+/* Iconos dentro de los botones */
+ion-icon {
+    font-size: 1.3rem;
+}
+
+/* --- FOOTER --- */
+.footer {
+    margin-top: 50px;
+    font-size: 0.7rem;
+    color: #444;
+    letter-spacing: 1px;
+}
+
+/* --- ANIMACIONES --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE (Ajustes para pantallas muy pequeñas) --- */
+@media screen and (max-width: 350px) {
+    .container {
+        width: 100%;
+    }
+    h1 {
+        font-size: 1.2rem;
+    }
+}
