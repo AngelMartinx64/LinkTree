@@ -118,3 +118,95 @@ ion-icon {
         font-size: 1.2rem;
     }
 }
+
+/* --- ESTILOS PARA LOS ENLACES DESPLEGABLES --- */
+
+/* Adaptar el botón para que funcione bien dentro de <summary> */
+.btn {
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Ocultar la flecha por defecto del navegador en <details> */
+summary {
+    list-style: none;
+}
+summary::-webkit-details-marker {
+    display: none;
+}
+
+/* Alinear el icono de la flecha a la derecha */
+.btn .icon-right {
+    margin-left: auto;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+/* Rotar la flecha cuando el panel está abierto */
+details[open] summary .icon-right {
+    transform: rotate(180deg);
+}
+
+/* Mantener el botón iluminado cuando está desplegado */
+details[open] summary {
+    background-color: #fff;
+    color: #000;
+    border-radius: 8px 8px 0 0;
+    border-bottom-color: transparent;
+}
+
+/* Contenedor de la descripción */
+.details-content {
+    background-color: #111;
+    padding: 15px 20px 20px 20px;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #333;
+    border-top: none;
+    margin-top: -5px; /* Sube ligeramente para pegarse al botón */
+    margin-bottom: 5px;
+    text-align: left;
+    animation: fadeInDown 0.3s ease;
+}
+
+.details-content p {
+    color: #aaa;
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+/* Botón interno para visitar el enlace */
+.sub-link {
+    display: inline-block;
+    background-color: #fff;
+    color: #000;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sub-link:hover {
+    background-color: #ddd;
+    transform: translateY(-2px);
+}
+
+/* Estilo especial para resaltar el botón del CV */
+.resume-btn {
+    border-color: #555; /* Un borde un poco más visible */
+    background-color: #151515; /* Ligeramente más claro para invitar al clic */
+}
+
+.resume-btn:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+/* Animación de entrada suave para el texto */
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
